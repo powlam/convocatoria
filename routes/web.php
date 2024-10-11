@@ -1,8 +1,13 @@
 <?php
 
+use App\Models\Meeting;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
+
+Route::get('meet/{meeting:slug}', function(Meeting $meeting) {
+    dd($meeting);
+})->name('meeting');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

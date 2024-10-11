@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -25,7 +26,7 @@ class Meeting extends Model
     {
         parent::boot();
         self::creating(function (Meeting $meeting) {
-            $meeting->user_id = Auth::id();
+            $meeting->user_id ??= Auth::id();
             $meeting->slug = Str::slug($meeting->name);
         });
     }
@@ -33,5 +34,12 @@ class Meeting extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    protected function url(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => route('meeting', ['meeting' => $this]),
+        );
     }
 }

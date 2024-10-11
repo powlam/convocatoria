@@ -12,7 +12,7 @@
     <form wire:submit="storeNewMeeting" class="mt-6 space-y-6">
         <div>
             <x-input-label for="name" :value="__('Name')" />
-            <x-text-input wire:model="name" id="name" name="name" type="text" class="block w-full mt-1" required autofocus />
+            <x-text-input wire:model="name" id="name" name="name" type="text" class="block w-full mt-1" required /><!--autofocus-->
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
 
