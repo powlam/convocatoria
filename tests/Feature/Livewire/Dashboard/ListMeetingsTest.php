@@ -27,7 +27,7 @@ it('exists on the page', function () {
 it('shows all the meetings of the user, and none from others', function () {
     $user = User::factory()->has(Meeting::factory()->count(5))->create();
     $stranger = User::factory()->has(Meeting::factory()->count(3))->create();
- 
+
     Livewire::actingAs($user)
         ->test(ListMeetings::class)
         ->assertViewHas('meetings', function ($meetings) {
