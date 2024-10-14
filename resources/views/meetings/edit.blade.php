@@ -49,7 +49,25 @@
 
             <div class="p-4 bg-white shadow sm:p-8 sm:rounded-lg">
                 <div class="max-w-xl">
-                    <p class="text-sm text-gray-600">
+                    <h2 class="text-lg font-medium text-gray-900">
+                        {{ __('Attendants') }}
+                    </h2>
+
+                    <p class="mt-1 text-sm text-gray-600">
+                        Here you can manage the attendants to the meeting.
+                    </p>
+
+                    <livewire:dashboard.manage-attendants :meeting="$meeting" />
+                </div>
+            </div>
+
+            <div class="p-4 bg-white shadow sm:p-8 sm:rounded-lg">
+                <div class="max-w-xl">
+                    <h2 class="text-lg font-medium text-gray-900">
+                        {{ __('Delete meeting') }}
+                    </h2>
+
+                    <p class="mt-1 text-sm text-gray-600">
                         {{ __('It will delete the meeting completely.') }}
                     </p>
 
