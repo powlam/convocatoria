@@ -54,10 +54,16 @@
                     </h2>
 
                     <p class="mt-1 text-sm text-gray-600">
-                        Here you can manage the attendants to the meeting.
+                        @lang('Here you can manage the attendants to the meeting.')
+                    </p>
+                    <p class="mt-1 text-sm text-gray-600">
+                        @lang('If there are not attendants, you can load them from an existing group.')
+                    </p>
+                    <p class="mt-1 text-sm text-gray-600">
+                        @lang('Once finished, you can save the attendants as a group to use it in other meetings.')
                     </p>
 
-                    <livewire:dashboard.manage-attendants :meeting="$meeting" />
+                    <livewire:dashboard.manage-attendants :meeting="$meeting" class="mt-6" />
                 </div>
             </div>
 

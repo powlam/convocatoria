@@ -51,4 +51,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Meeting::class);
     }
+
+    public function groups(): HasMany
+    {
+        return $this->hasMany(Group::class);
+    }
 }
