@@ -11,6 +11,10 @@
 
     <div class="py-12">
         <div class="mx-auto space-y-6 max-w-7xl sm:px-6 lg:px-8">
+            <div class="p-4 text-center ">
+                <a href="{{ $meeting->url }}" class="font-bold cursor-pointer hover:underline">{{ $meeting->url }}</a>
+            </div>
+
             <div class="p-4 bg-white shadow sm:p-8 sm:rounded-lg">
                 <div class="max-w-xl">
                     <form method="POST" action="{{ route('meetings.update', $meeting) }}" class="mt-6 space-y-6">

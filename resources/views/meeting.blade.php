@@ -28,6 +28,14 @@
             <div class="p-4 space-y-2 bg-white shadow sm:p-8 sm:rounded-lg">
                 <livewire:public-web.meeting-attendants :meeting="$meeting" />
             </div>
+
+            @auth
+                @can('update', $meeting)
+                    <div class="p-4 text-center ">
+                        <a href="{{ route('meetings.edit', $meeting) }}" class="font-bold cursor-pointer hover:underline">@lang('Edit meeting')</a>
+                    </div>
+                @endcan
+            @endauth
         </div>
     </div>
 </x-public-web-layout>
