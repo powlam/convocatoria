@@ -44,6 +44,20 @@ class Meeting extends Model
         return $this->hasMany(Attendant::class);
     }
 
+    protected function date(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => $this->when?->format('Y-m-d'),
+        );
+    }
+
+    protected function time(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => $this->when?->format('H:i'),
+        );
+    }
+
     protected function url(): Attribute
     {
         return Attribute::make(

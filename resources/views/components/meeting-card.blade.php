@@ -2,7 +2,12 @@
 @use('App\Enums\YesNo')
 
 <div class="px-4 py-2 space-y-2 border border-gray-200 rounded-md shadow-md meeting-card">
-    <h3 class="font-bold border-b cursor-default">{{ $meeting->name }}</h3>
+    <h3 class="flex justify-between font-bold border-b cursor-default">
+        <span>{{ $meeting->name }}</span>
+        <a href="{{ route('meetings.edit', $meeting) }}" class="font-normal cursor-pointer opacity-10 hover:opacity-100 hover:shadow-xl">
+            <x-icons.pencil-square />
+        </a>
+    </h3>
     <div class="flex justify-between">
         <div>
             @if ($meeting->when)
