@@ -1,7 +1,7 @@
 <x-public-web-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('Meeting') }}
+            {{ __('convocatoria.Meeting') }}
         </h2>
     </x-slot>
 
@@ -32,7 +32,7 @@
             @auth
                 @can('update', $meeting)
                     <div class="p-4 text-center ">
-                        <a href="{{ route('meetings.edit', $meeting) }}" class="font-bold cursor-pointer hover:underline">@lang('Edit meeting')</a>
+                        <a href="{{ route('meetings.edit', $meeting) }}" class="font-bold cursor-pointer hover:underline">@lang('convocatoria.Edit meeting')</a>
                     </div>
                 @endcan
             @endauth

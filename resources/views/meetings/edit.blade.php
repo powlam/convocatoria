@@ -1,11 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('Edit meeting') }}
+            {{ __('convocatoria.Edit meeting') }}
         </h2>
 
         <p class="mt-1 text-sm text-gray-600">
-            {{ __('Edit the meeting data and attendants.') }}
+            {{ __('convocatoria.Edit the meeting data and attendants.') }}
         </p>
     </x-slot>
 
@@ -21,25 +21,25 @@
                         @csrf
                         @method('PUT')
                         <div>
-                            <x-input-label for="name" :value="__('Name')" />
+                            <x-input-label for="name" :value="__('convocatoria.Name')" />
                             <x-text-input id="name" name="name" type="text" class="block w-full mt-1" required autofocus value="{{ $meeting->name ?? old('name') }}" />
                             <x-input-error class="mt-2" :messages="$errors->get('name')" />
                         </div>
                 
                         <div>
-                            <x-input-label for="date" :value="__('When?')" />
+                            <x-input-label for="date" :value="__('convocatoria.When?')" />
                             <x-text-input id="date" name="date" type="date" class="block w-full mt-1" value="{{ $meeting->date ?? old('date') }}" />
                             <x-input-error class="mt-2" :messages="$errors->get('date')" />
                         </div>
                 
                         <div>
-                            <x-input-label for="time" :value="__('At what time?')" />
+                            <x-input-label for="time" :value="__('convocatoria.At what time?')" />
                             <x-text-input id="time" name="time" type="time" class="block w-full mt-1" value="{{ $meeting->time ?? old('time') }}" />
                             <x-input-error class="mt-2" :messages="$errors->get('time')" />
                         </div>
                 
                         <div>
-                            <x-input-label for="where" :value="__('Where?')" />
+                            <x-input-label for="where" :value="__('convocatoria.Where?')" />
                             <x-text-input id="where" name="where" type="text" class="block w-full mt-1" value="{{ $meeting->where ?? old('where') }}" />
                             <x-input-error class="mt-2" :messages="$errors->get('where')" />
                         </div>
@@ -54,17 +54,17 @@
             <div class="p-4 bg-white shadow sm:p-8 sm:rounded-lg">
                 <div class="max-w-xl">
                     <h2 class="text-lg font-medium text-gray-900">
-                        {{ __('Attendants') }}
+                        {{ __('convocatoria.Attendants') }}
                     </h2>
 
                     <p class="mt-1 text-sm text-gray-600">
-                        @lang('Here you can manage the attendants to the meeting.')
+                        @lang('convocatoria.Here you can manage the attendants to the meeting.')
                     </p>
                     <p class="mt-1 text-sm text-gray-600">
-                        @lang('If there are not attendants, you can load them from an existing group.')
+                        @lang('convocatoria.If there are not attendants, you can load them from an existing group.')
                     </p>
                     <p class="mt-1 text-sm text-gray-600">
-                        @lang('Once finished, you can save the attendants as a group to use it in other meetings.')
+                        @lang('convocatoria.Once finished, you can save the attendants as a group to use it in other meetings.')
                     </p>
 
                     <livewire:dashboard.manage-attendants :meeting="$meeting" class="mt-6" />
@@ -74,11 +74,11 @@
             <div class="p-4 bg-white shadow sm:p-8 sm:rounded-lg">
                 <div class="max-w-xl">
                     <h2 class="text-lg font-medium text-gray-900">
-                        {{ __('Delete meeting') }}
+                        {{ __('convocatoria.Delete meeting') }}
                     </h2>
 
                     <p class="mt-1 text-sm text-gray-600">
-                        {{ __('It will delete the meeting completely.') }}
+                        {{ __('convocatoria.It will delete the meeting completely.') }}
                     </p>
 
                     <form method="POST" action="{{ route('meetings.destroy', $meeting) }}" class="mt-6 space-y-6">

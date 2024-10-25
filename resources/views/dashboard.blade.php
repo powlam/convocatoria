@@ -14,7 +14,7 @@
             </div>
 
             <x-a-as-primary-button href="{{ route('meetings.create') }}">
-                @lang('New meeting')
+                @lang('convocatoria.New meeting')
             </x-a-as-primary-button>
         </div>
     </div>

@@ -1,11 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('New meeting') }}
+            {{ __('convocatoria.New meeting') }}
         </h2>
 
         <p class="mt-1 text-sm text-gray-600">
-            {{ __('Create a new meeting.') }}
+            {{ __('convocatoria.Create a new meeting.') }}
         </p>
     </x-slot>
 
@@ -16,25 +16,25 @@
                     <form method="POST" action="{{ route('meetings.store') }}" class="mt-6 space-y-6">
                         @csrf
                         <div>
-                            <x-input-label for="name" :value="__('Name')" />
+                            <x-input-label for="name" :value="__('convocatoria.Name')" />
                             <x-text-input id="name" name="name" type="text" class="block w-full mt-1" required autofocus value="{{ old('name') }}" />
                             <x-input-error class="mt-2" :messages="$errors->get('name')" />
                         </div>
                 
                         <div>
-                            <x-input-label for="date" :value="__('When?')" />
+                            <x-input-label for="date" :value="__('convocatoria.When?')" />
                             <x-text-input id="date" name="date" type="date" class="block w-full mt-1" value="{{ old('date') }}" />
                             <x-input-error class="mt-2" :messages="$errors->get('date')" />
                         </div>
                 
                         <div>
-                            <x-input-label for="time" :value="__('At what time?')" />
+                            <x-input-label for="time" :value="__('convocatoria.At what time?')" />
                             <x-text-input id="time" name="time" type="time" class="block w-full mt-1" value="{{ old('time') }}" />
                             <x-input-error class="mt-2" :messages="$errors->get('time')" />
                         </div>
                 
                         <div>
-                            <x-input-label for="where" :value="__('Where?')" />
+                            <x-input-label for="where" :value="__('convocatoria.Where?')" />
                             <x-text-input id="where" name="where" type="text" class="block w-full mt-1" value="{{ old('where') }}" />
                             <x-input-error class="mt-2" :messages="$errors->get('where')" />
                         </div>

@@ -1,11 +1,19 @@
 @props(['attendant', 'answer'])
 
 @php
-    $answerText = $answer === true ? 'true' : ($answer === false ? 'false' : 'null');
-    $actionText = $answer === true ? 'will attend' : ($answer === false ? 'will not attend' : 'is still uncertain');
+    if ($answer === true) {
+        $answerText = 'true';
+        $actionText = __('convocatoria.will attend');
+    } else if ($answer === false) {
+        $answerText = 'false';
+        $actionText = __('convocatoria.will not attend');
+    } else {
+        $answerText = 'null';
+        $actionText = __('convocatoria.is still uncertain');
+    }
 @endphp
 <button wire:click='storeAttendantAnswer({{ $attendant->id }}, {{ $answerText }})'
-    wire:confirm='@lang('Confirm the new answer, please: :name :action', ['name' => $attendant->name, 'action' => $actionText])'
+    wire:confirm='@lang('convocatoria.Confirm the new answer, please: :name :action', ['name' => $attendant->name, 'action' => $actionText])'
     @disabled($attendant->willBeAttending === $answer)
     @class([
     'font-bold border-2 border-transparent rounded-lg px-2 py-1',
