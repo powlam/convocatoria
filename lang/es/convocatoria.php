@@ -23,7 +23,7 @@ return [
     'is still uncertain' => 'aún no es seguro',
     'will attend' => 'asistirá',
     'will not attend' => 'no asistirá',
-    
+
     'Confirm the new answer, please: :name :action' => 'Confirma la respuesta, por favor: :name :action',
     'Create a new meeting.' => 'Crear una nueva convocatoria.',
     'Edit the meeting data and attendants.' => 'Editar los datos y asistentes de la convocatoria.',

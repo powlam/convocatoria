@@ -23,7 +23,7 @@ return [
     'is still uncertain' => 'is still uncertain',
     'will attend' => 'will attend',
     'will not attend' => 'will not attend',
-    
+
     'Confirm the new answer, please: :name :action' => 'Confirm the new answer, please: :name :action',
     'Create a new meeting.' => 'Create a new meeting.',
     'Edit the meeting data and attendants.' => 'Edit the meeting data and attendants.',
