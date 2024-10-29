@@ -20,9 +20,9 @@
     </div>
     @foreach ($meeting->attendants as $attendant)
         <div class='flex justify-between px-2 py-1 rounded-lg cursor-default hover:bg-gray-100'>
-            @include('livewire.public-web.button-attendant-answer', ['attendant' => $attendant, 'answer' => true])
+            @include('livewire.public-web.button-attendant-answer', ['attendant' => $attendant, 'answer' => true, 'isStart' => true])
             @include('livewire.public-web.button-attendant-answer', ['attendant' => $attendant, 'answer' => null])
-            @include('livewire.public-web.button-attendant-answer', ['attendant' => $attendant, 'answer' => false])
+            @include('livewire.public-web.button-attendant-answer', ['attendant' => $attendant, 'answer' => false, 'isEnd' => true])
         </div>
     @endforeach
 </div>
